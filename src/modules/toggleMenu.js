@@ -10,19 +10,15 @@
 
 		body.addEventListener('click', (event) => {
 			let target = event.target;
-			if (target.classList.contains('close-btn')) {
-				handlerMenu();
-			}
 
-			target = target.closest('.menu');
-
-			if (target) {
-				handlerMenu();
-			} else if (!target) {
-				menu.classList.remove('active-menu');
+			if (menu.classList.contains('active-menu')) {
+				if (target.closest('.active-menu a') || !target.closest('.active-menu')) {
+					handlerMenu();
+				} else if (target.closest('.menu')) {
+					handlerMenu();
+				}
 			}
 		});
-
 	};
 
 	export default toggleMenu;
