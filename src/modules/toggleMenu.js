@@ -15,10 +15,10 @@
 
 				if (target.closest('.active-menu a') || !target.closest('.active-menu')) {
 					handlerMenu();
+					}
 				} else if (target.closest('.menu')) {
 					handlerMenu();
 				}
-			}
 
 		});
 	};
